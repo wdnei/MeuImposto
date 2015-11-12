@@ -1,0 +1,71 @@
+<ion-view view-title="Embutir Icms">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear button-positive" ng-click="embutirIcms()">Embutir Icms</button>
+  </ion-nav-buttons>
+  <ion-content delegate-handle="mainScroll"  class="padding">
+    <div class="list">
+
+
+
+      <li class="item item-checkbox">
+      <label class="checkbox">
+    <input type="checkbox" ng-model="data.consumidorFinal" ng-change="embutirIcms()">
+      </label>
+      Consumidor Final
+      </li>
+
+
+      <!-- <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="data.consumidorFinal" ng-change=ng-keyup="embutirIcms()">
+     </label>
+     Consumidor Final
+    </li> -->
+
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Valor Produto Real do Produto</span>
+      <input type="number" ng-model="data.valorProdutoSemIcms" ng-keyup="embutirIcms()" placeholder="VP sem ICMS">
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">% ICMS</span>
+      <input type="number" ng-model="data.aliquotaIcms" ng-keyup="embutirIcms()" placeholder="Valor Produto">
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">% IPI</span>
+      <input type="number" ng-model="data.aliquotaIpi" ng-keyup="embutirIcms()" placeholder="Valor Produto">
+    </label>
+    <label class="item item-input item-stacked-label ">
+      <span class="input-label assertive">Valor Produto Com ICMS Embutido</span>
+      <input type="text" ng-readonly="data" ng-model="data.valorProdutoComIcms" placeholder="VP com ICMS">
+    </label>
+    <label class="item item-input item-stacked-label ">
+      <span class="input-label ">Base ICMS</span>
+      <input type="text" ng-readonly="data" ng-model="data.baseIcms" placeholder="">
+    </label>
+    <label class="item item-input item-stacked-label ">
+      <span class="input-label balanced">Valor ICMS</span>
+      <input type="text" ng-readonly="data" ng-model="data.valorIcms" placeholder="">
+    </label>
+    <label class="item item-input item-stacked-label assertive">
+      <span class="input-label ">Base IPI</span>
+      <input type="text" ng-readonly="data" ng-model="data.baseIpi" placeholder="">
+    </label>
+    <label class="item item-input item-stacked-label assertive">
+      <span class="input-label balanced">Valor IPI</span>
+      <input type="text" ng-readonly="data" ng-model="data.valorIpi" placeholder="">
+    </label>
+    <label class="item item-input item-stacked-label assertive">
+      <span class="input-label positive">Valor Final Nota</span>
+      <input type="text" ng-readonly="data" ng-model="data.valorNota" placeholder="">
+    </label>
+
+  </div>
+
+  <div class="row">
+    <div class="col"><button ng-click="embutirIcms()" class="button button-block button-primary">Embutir Icms</button></div>
+
+  </div>
+
+
+</ion-content>
+</ion-view>
