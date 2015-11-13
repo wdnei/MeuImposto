@@ -1,0 +1,23 @@
+<ion-view view-title="Cfop">
+  <ion-content>
+    <ion-list>
+      <a  ng-repeat="cfop in cfops" class="item item-body" href="#/app/cfop/{{cfop.id}}">
+
+        <h2>{{cfop.titulo}}</h2>
+        <div class="item item-text-wrap">
+          {{cfop.descricao}}
+        </div>
+
+      </a>
+
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar >
+        <div class="tabs tabs-icon-only">
+            <a class="tab-item" href="#" ng-click="goHome();">
+                <i class="icon ion-home"></i>
+            </a>
+        </div>
+
+    </ion-footer-bar>
+</ion-view>

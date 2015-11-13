@@ -55,6 +55,28 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
+
+.controller('CfopCtrl', function($scope,$ionicHistory,$location,$state,$stateParams,CfopService) {
+
+  $ionicHistory.nextViewOptions({
+
+  disableBack: true
+});
+
+
+  var lista=CfopService.getAll();
+
+  $scope.cfops=lista.filter(function(item){return item.idPai==$stateParams.idPai});
+
+  $scope.print=function(){
+    console.log(CfopService.getAll());
+  };
+
+  $scope.goHome=function(){$state.go("app.cfop",{'idPai':0});};
+
+
+})
+
 .controller('IcmsCtrl', function($scope) {
 
 $scope.data={valorProdutoSemIcms:0.00
