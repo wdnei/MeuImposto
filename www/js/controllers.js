@@ -72,7 +72,11 @@ angular.module('starter.controllers', [])
     console.log(CfopService.getAll());
   };
 
-  $scope.goHome=function(){$state.go("app.cfop",{'idPai':0});};
+  $scope.goHome=function(){
+    $ionicHistory.clearHistory();
+    $ionicHistory.clearCache();
+    $state.go("app.cfop",{'idPai':0});
+  };
 
 
 })
